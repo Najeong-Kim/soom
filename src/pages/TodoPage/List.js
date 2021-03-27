@@ -14,22 +14,24 @@ export default function List({ tasks, onClickDelete, onClickComplete }) {
           <li key={id} className="list-todo todo-main__list-todo">
             <div className="list-checkset todo-main__list-checkset">
               <input
+                id={id}
                 className="list-check todo-main__list-check"
                 type="checkbox"
                 onClick={() => onClickComplete(id)}
                 placeholder="complete"
               />
 
+
               {done
                 ? (
-                  <p className="list-name todo-main__list-name" style={{ textDecoration: 'line-through' }}>
+                  <label htmlFor={id} className="list-name todo-main__list-name" style={{ textDecoration: 'line-through', color: 'gray' }}>
                     {title}
-                  </p>
+                  </label>
                 )
                 : (
-                  <p className="list-name todo-main__list-name">
+                  <label htmlFor={id} className="list-name todo-main__list-name">
                     {title}
-                  </p>
+                  </label>
                 )}
 
             </div>
